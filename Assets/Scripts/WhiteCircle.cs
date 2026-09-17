@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RedCircle : MonoBehaviour
+public class WhiteCircle : MonoBehaviour
 {
     public float attractForce = 10f;
     public float attractRange = 5f;
@@ -14,10 +14,11 @@ public class RedCircle : MonoBehaviour
 
     void Update()
     {
-        GameObject[] attractTargets = GameObject.FindGameObjectsWithTag("Blue");
-        GameObject[] repelTargets = GameObject.FindGameObjectsWithTag("Red");
+        GameObject[] targets1 = GameObject.FindGameObjectsWithTag("Blue");
+        GameObject[] targets2 = GameObject.FindGameObjectsWithTag("Red");
+        
 
-        foreach (GameObject obj in repelTargets)
+        foreach (GameObject obj in targets1)
         {
             if (rb != null)
             {
@@ -33,7 +34,7 @@ public class RedCircle : MonoBehaviour
             }
         }
 
-        foreach (GameObject obj in attractTargets)
+        foreach (GameObject obj in targets2)
         {
             if (rb != null)
             {
@@ -44,7 +45,7 @@ public class RedCircle : MonoBehaviour
                 {
                     Vector2 normalizedDir = direction.normalized;
 
-                    rb.AddForce(normalizedDir * (attractForce / distance));
+                    rb.AddForce(-normalizedDir * (attractForce / distance));
                 }
             }
         }

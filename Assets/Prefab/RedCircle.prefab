@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -169,3 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf5a869a807a704c8739f205b105676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  attractForce: 5
+  attractRange: 5
