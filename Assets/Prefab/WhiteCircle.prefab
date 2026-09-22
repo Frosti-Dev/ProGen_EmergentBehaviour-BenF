@@ -169,5 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cf7bde9431810468f2bf0217015cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  attractForce: 7
+  attractForce: 10
   attractRange: 3

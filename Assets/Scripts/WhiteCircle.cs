@@ -29,7 +29,7 @@ public class WhiteCircle : MonoBehaviour
                 {
                     Vector2 normalizedDir = direction.normalized;
 
-                    rb.AddForce(-normalizedDir * (attractForce / distance));
+                    rb.AddForce(normalizedDir * (attractForce / distance));
                 }
             }
         }
@@ -45,7 +45,7 @@ public class WhiteCircle : MonoBehaviour
                 {
                     Vector2 normalizedDir = direction.normalized;
 
-                    rb.AddForce(-normalizedDir * (attractForce / distance));
+                    rb.AddForce(normalizedDir * (attractForce / distance));
                 }
             }
         }
