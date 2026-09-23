@@ -3,7 +3,8 @@ using UnityEngine;
 public class RedCircle : MonoBehaviour
 {
     public float attractForce = 10f;
-    public float attractRange = 5f;
+    public float repelForce = 15f;
+    public float range = 5f;
 
     private Rigidbody2D rb;
 
@@ -24,11 +25,11 @@ public class RedCircle : MonoBehaviour
                 Vector2 direction = obj.transform.position - transform.position;
                 float distance = direction.magnitude;
 
-                if (distance < attractRange && distance > 0.1f)
+                if (distance < range && distance > 0.1f)
                 {
                     Vector2 normalizedDir = direction.normalized;
 
-                    rb.AddForce(-normalizedDir * (attractForce / distance));
+                    rb.AddForce(-normalizedDir * (repelForce / distance));
                 }
             }
         }
@@ -40,7 +41,7 @@ public class RedCircle : MonoBehaviour
                 Vector2 direction = obj.transform.position - transform.position;
                 float distance = direction.magnitude;
 
-                if (distance < attractRange && distance > 0.1f)
+                if (distance < range && distance > 0.1f)
                 {
                     Vector2 normalizedDir = direction.normalized;
 
