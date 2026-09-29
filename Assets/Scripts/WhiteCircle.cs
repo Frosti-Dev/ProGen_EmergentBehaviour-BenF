@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WhiteCircle : MonoBehaviour
+public class WhiteCircle : MonoBehaviour, ICircle
 {
     public float attractForce = 10f;
     public float attractRange = 5f;
@@ -10,6 +10,11 @@ public class WhiteCircle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void ResetCircle()
+    {
+        Destroy(this.gameObject);
     }
 
     void Update()

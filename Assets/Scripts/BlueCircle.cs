@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BlueCircle : MonoBehaviour
+public class BlueCircle : MonoBehaviour, ICircle
 {
     public float attractForce = 10f;
     public float repelForce = 15f;
@@ -11,6 +11,11 @@ public class BlueCircle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void ResetCircle()
+    {
+        Destroy(this.gameObject);
     }
 
     void Update()

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,4 +36,31 @@ public class ClickController : MonoBehaviour
         WhiteCircle GO = Instantiate(white, this.transform.position, this.transform.rotation);
     }
 
+    
+    void OnReset()
+    {
+        var targets = new List<GameObject>();
+
+        foreach(GameObject blue in GameObject.FindGameObjectsWithTag("Blue"))
+        {
+            targets.Add(blue);
+        }
+        foreach (GameObject red in GameObject.FindGameObjectsWithTag("Red"))
+        {
+            targets.Add(red);
+        }
+        foreach (GameObject white in GameObject.FindGameObjectsWithTag("White"))
+        {
+            targets.Add(white);
+        }
+
+
+
+        foreach (GameObject target in targets)
+        {
+            ICircle circle = target.GetComponent<ICircle>();
+            circle.ResetCircle();
+        }
+    }
+    
 }
