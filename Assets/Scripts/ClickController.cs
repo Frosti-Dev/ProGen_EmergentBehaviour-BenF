@@ -36,6 +36,11 @@ public class ClickController : MonoBehaviour
         WhiteCircle GO = Instantiate(white, this.transform.position, this.transform.rotation);
     }
 
+    void OnEsc()
+    {
+        Application.Quit();
+    }
+
     
     void OnReset()
     {
